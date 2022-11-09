@@ -76,9 +76,13 @@
 
 
 var images = [
-    "../imgs/TOFbg.png",
-    "../imgs/TOFLogo.png",
-    "../imgs/tof_cover.jpg"
+    "../imgs/pics/pic1.jpg",
+    "../imgs/pics/pic2.jpg",
+    "../imgs/pics/pic3.jpg",
+    "../imgs/pics/pic4.jpg",
+    "../imgs/pics/pic5.jpg",
+    "../imgs/pics/pic6.jpg",
+    "../imgs/pics/pic7.jpg"
 ];
 
 var count = 0;
