@@ -33,7 +33,7 @@
 //     }
 //     showImage(currentImage);
 //   });
-  
+
 //   // the prev button function
 //   prevBtn.addEventListener("click", function () {
 //     currentImage--;
@@ -76,35 +76,37 @@
 
 
 var images = [
-    "../imgs/pics/pic1.jpg",
-    "../imgs/pics/pic2.jpg",
-    "../imgs/pics/pic3.jpg",
-    "../imgs/pics/pic4.jpg",
-    "../imgs/pics/pic5.jpg",
-    "../imgs/pics/pic6.jpg",
-    "../imgs/pics/pic7.jpg"
+    "../imgs/pics/cat1.jpg",
+    "../imgs/pics/cat2.jpg",
+    "../imgs/pics/cats1.jpg",
+    "../imgs/pics/cats2.jpg",
+    "../imgs/pics/cover.jpg",
+    "../imgs/pics/donkey1.jpg",
+    "../imgs/pics/playground.jpg"
 ];
 
 var count = 0;
-function prevClick(){
+
+function prevClick() {
     var pic = document.getElementById("slidepic");
     var picNum = document.getElementById("slidenum");
-    if(count === 0){
-        count = images.length-1;
-    }else{
+    if (count === 0) {
+        count = images.length - 1;
+    } else {
         count--;
     }
-	pic.src = images[count];
-    picNum.innerHTML = count+"/"+images.length;
+    pic.src = images[count];
+    picNum.innerHTML = count + "/" + images.length;
 }
-function nextClick(){
+
+function nextClick() {
     var pic = document.getElementById("slidepic");
     var picNum = document.getElementById("slidenum");
-    if(count === images.length-1){
+    if (count === images.length - 1) {
         count = 0;
-    }else{
+    } else {
         count++;
     }
-	pic.src = images[count];
-    picNum.innerHTML = count+"/"+images.length;
+    pic.src = images[count];
+    picNum.innerHTML = count + "/" + images.length;
 }

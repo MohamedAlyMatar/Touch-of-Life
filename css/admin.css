@@ -1,0 +1,327 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* background-image: url("imgs/TOFbg.png"); */
+    background-color: peru;
+    margin: 0;
+    font-family: monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+
+/* top nav styles */
+
+.topnav {
+    overflow: hidden;
+    background-color: #FFEBAD;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0px;
+}
+
+
+/* logo pic */
+
+.text_logo {
+    margin-left: 10px;
+}
+
+.logo a {
+    color: blue;
+    text-decoration: none;
+}
+
+
+/* links bar style */
+
+
+/* Appearance */
+
+.links {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #FFF6BF, transparent);
+    border-bottom: 1px solid #FFF6BF;
+    box-shadow: 0 0 32px #FFF6BF;
+    font-size: 2em;
+    align-self: center;
+}
+
+.links>a {
+    color: grey;
+    padding: .75em;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+.links>a:hover {
+    background: #ffffff06;
+    color: #adf;
+}
+
+.links>a.active {
+    background-color: #FFEBAD;
+    color: black;
+}
+
+.links>.line {
+    background: #68a;
+    height: 1px;
+    pointer-events: none;
+}
+
+
+/* The Magic */
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(var(--items), 1fr);
+    position: relative;
+    margin-left: auto;
+}
+
+.links>.line {
+    opacity: 0;
+    transition: all .5s;
+    position: absolute;
+    bottom: 0;
+    left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+    width: var(--width, calc(100% / var(--items)));
+    --index: 0;
+}
+
+.links>a:hover~.line {
+    opacity: 1;
+}
+
+.links>a:nth-of-type(1):hover~.line {
+    --index: 1;
+}
+
+.links>a:nth-of-type(2):hover~.line {
+    --index: 2;
+}
+
+.links>a:last-of-type:hover~.line {
+    --index: var(--items);
+}
+
+
+/* End of links style */
+
+
+/* Section and Cards style */
+
+.sec {
+    padding: 10px;
+    background: transparent;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin_card {
+    background-color: #E2DCC8;
+    height: auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_card p {
+    font-size: 24px;
+    align-items: center;
+    font-family: cursive;
+}
+
+.admin_card img {
+    background: blue;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    max-width: 600px;
+    /* border-radius: 50%; */
+}
+
+.admin_card button {
+    margin: 10px;
+}
+
+
+/* End of Sections and Cards style */
+
+
+/* Slide Show */
+
+
+/* slider container */
+
+.slider {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    margin: 5px auto;
+    max-width: 600px;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: block;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    /* user-select: none; */
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Number text */
+
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* End of Slide Show */
+
+
+/* Footer style */
+
+footer {
+    font-family: monospace;
+    background: #FFEBAD;
+    color: black;
+    position: relative;
+    padding: 1rem;
+    bottom: 0;
+    margin-top: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.clogo {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+footer ul {
+    padding: 10px;
+    display: flex;
+    width: auto;
+    margin-left: auto;
+    align-content: center;
+}
+
+footer ul li {
+    padding: 10px;
+    list-style: none;
+    color: black;
+}
+
+
+/* End of Footer style */
