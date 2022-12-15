@@ -17,15 +17,18 @@ async function connect() {
 connect();
 
 let account = require('./models/account');
+let animal = require('./models/animal');
 
-let Adminacc = new account(
+let demoCat = new animal (
     {
-        email: 'tofcat1@admin',
-        password: '#TOF1761'
+        name : 'Oreo',
+        specie : 'Cat',
+        breed : 'ragdoll',
+        age : 6,
+        imgUrl : 'https://images.ctfassets.net/440y9b545yd9/3G6QLmILVQSIrwYa4Od6CB/624a1b31b7a27032c2902173365d3c82/183Ragdollcat.jpg'
     }
 )
-Adminacc.save();
-
+demoCat.save();
 
 
 
