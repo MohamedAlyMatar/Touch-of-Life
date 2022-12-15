@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 
-
-
 const uri = "mongodb+srv://TOF:TOF1761@cluster0.mzkc4h3.mongodb.net/?retryWrites=true&w=majority"
 async function connect() {
     try{
@@ -15,21 +13,21 @@ async function connect() {
     }
 }
 connect();
+app.use(express.static(__dirname + '/public'));
 
-let account = require('./models/account');
-let animal = require('./models/animal');
-
-let demoCat = new animal (
-    {
-        name : 'Oreo',
-        specie : 'Cat',
-        breed : 'ragdoll',
-        age : 6,
-        imgUrl : 'https://images.ctfassets.net/440y9b545yd9/3G6QLmILVQSIrwYa4Od6CB/624a1b31b7a27032c2902173365d3c82/183Ragdollcat.jpg'
-    }
-)
-demoCat.save();
-
+// let account = require('./models/account');
+// let animal = require('./models/animal');
+app.set('view engine','ejs');
+app.get('/',(req,res) => {
+    res.render('index')
+});
+app.get('/adopt',(req,res) => {
+   // res.render('adopt')
+   res.send("adopt page");
+});
+app.get('/login',(req,res) => {
+    res.render('login')
+ });
 
 
 const port =  process.env.PORT || 3000;
