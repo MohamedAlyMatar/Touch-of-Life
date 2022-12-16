@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -150,7 +155,7 @@ body {
 
 /* Section and Cards style */
 
-.sec {
+.card {
     padding: 10px;
     background: transparent;
     height: auto;
@@ -160,33 +165,82 @@ body {
     justify-content: center;
 }
 
-.card {
-    padding: 10px;
-    background-color: #E2DCC8;
-    height: auto;
-    width: 700px;
+.form {
+    position: relative;
+    filter: drop-shadow(0 0 2px #000000);
+    border-radius: 5px;
+    width: 800px;
+    height: fit-content;
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 40px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
-.card_text {
-    padding: 10px;
-    /* font-family: 'Times New Roman', Times, serif; */
-    font-family: cursive;
+.form img {
+    margin: 10px;
+    position: relative;
+    /* height: 20px;
+    top: 230px;
+    right: 60px; */
+    cursor: pointer;
 }
 
-.card p {
-    align-items: center;
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    border-radius: 4px;
+    width: 100%;
+    border: 0;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 14px;
 }
 
-.card img {
-    background: blue;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+.form input:focus {
+    box-shadow: 0 0 5px 0 rgba(106, 98, 210);
+}
+
+span {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.form button {
+    outline: 0;
+    background: peru;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: black;
+    color: #fff;
+}
+
+.message {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.form .message a {
+    font-size: 14px;
+    color: #6a62d2;
+    text-decoration: none;
 }
 
 
