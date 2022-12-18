@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adopt</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/adopt.css">
+    <script type="text/javascript" src="../js/adopt.js"></script>
+</head>
+
+<body>
+
+    <nav class="links" style="--items: 6;">
+        <a href="/" class="active">Home</a>
+
+    </nav>
+
+
+    <% for (var r of rqs) { %>
+        <div class="card">
+            <div class="form">
+                <form>
+                    
+                    <h3>Name:
+                        <p id="id"><%=r.name %></p>
+                    </h3>
+                    <h3>phone number:
+                        <p id="name"><%=r.phone %></p>
+                    </h3>
+                    <h3>animal ID:
+                        <p id="name"><%=r.animal %> </p>
+                    </h3>
+                </form>
+            </div>
+        </div>
+        <% } %>
+    
+
+    <footer>
+        <p id="contact">Contact us here!</p>
+        <div class="contacts_bar">
+            <a href="https://web.facebook.com/TOLAnimalSanctuary/about"> <img class="clogo" src="../imgs/icons/fb.png" alt="Facebook"> </a>
+            <a href=""> <img class="clogo" src="../imgs/icons/email.png" alt="Email"> </a>
+            <a href=""> <img class="clogo" src="../imgs/icons/phone.png" alt="Telephone"> </a>
+        </div>
+        <p>TOUCH OF LIFE Organization Reg.nr 2897 - 03/5/07 Ministry of Social Affairs Giza- EGYPT
+        </p>
+    </footer>
+
+</body>
+
+</html>

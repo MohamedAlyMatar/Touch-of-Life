@@ -17,28 +17,33 @@ body {
 }
 
 .forms-section {
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .forms {
     margin: 10px;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    padding: 5px;
+    /* change based on the use */
     display: flex;
     flex-direction: row;
-    width: fit-content;
-    gap: 10px;
-    height: fit-content;
-    padding: 5px;
+    flex-wrap: wrap;
 }
 
 
 /* Cards style */
 
 .card {
-    height: fit-content;
-    width: 100%;
-    align-items: center;
+    padding: 10px;
+    background: transparent;
+    height: auto;
+    width: auto;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -46,17 +51,23 @@ body {
     position: relative;
     filter: drop-shadow(0 0 2px #000000);
     border-radius: 5px;
-    width: 360px;
+    width: 400px;
     height: fit-content;
     background-color: #ffffff;
     padding: 40px;
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .form img {
-    position: absolute;
-    height: 20px;
-    top: 230px;
-    right: 60px;
+    margin: 10px;
+    position: relative;
+    /* change based on the use */
+    height: 300px;
+    width: 300px;
     cursor: pointer;
 }
 
