@@ -27,7 +27,7 @@ module.exports = passportConfig = (passport)=> {
                 if(data[0].password !== password)
                 return done(null,false,{message : "user not found"})
 
-     
+     //
                 console.log("good")
                 return done(null,data)
                                
