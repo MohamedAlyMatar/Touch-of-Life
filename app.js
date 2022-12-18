@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-
+const serverless = require(' serverless-http')
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
@@ -113,3 +113,5 @@ app.use('/adopt', adopt);
 
 const port = process.env.PORT || 3000;
 app.listen(port, console.log("LISTENING ON PORT : ", port));
+
+app.exports.handler = serverless(app)
