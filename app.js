@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
@@ -71,11 +70,29 @@ app.get('/admin', checkAuth, (req, res) => {
     res.render('admin')
 })
 
+
 //admin post
-app.post('/admin', checkAuth, (req, res) => {
+app.post('/admin', checkAuth, async (req, res) => {
     
     console.log(req.body,"req query");
-    console.log(req.body.addordel,"add or delete type");
+    let result;
+    if(req.body.addordel === "add")
+    {
+        let newAnimal = new Animal({
+            name: req.body.animalName,
+            specie: req.body.animalSpecie,
+            breed:req.body.animalBreed,
+            imgUrl: req.body.imgurl,
+        })
+        result = await newAnimal.save();
+    }
+    else
+    {
+        let ID = req.body.animalid;
+        console.log(ID,"sent ID");
+        result = await Animal.deleteOne({_id:ID});
+    }
+    console.log (result);
 
     
     res.render('admin')
@@ -91,9 +108,6 @@ app.get('/areqs', checkAuth, async (req, res) => {
         console.log(err)
         res.render('areqs', { rqs: [] })
     }
-})
-app.get('/donate', (req, res) => {
-    res.render('donate')
 })
 //https://accept.paymob.com/api/acceptance/iframes/711647?payment_token={payment_key_obtained_previously}
 function checkAuth(req, res, next) {
@@ -114,7 +128,16 @@ app.post('/logout', function (req, res, next) {
 });
 
 
+
+
+app.get('/donate', (req, res) => {
+    //res.send(__dirname+'/payment.html')
+    res.sendFile(__dirname+'/payment.html')
+})
+
+
 const adopt = require('./routes/adopt');
+const Animal = require('./models/animal.js');
 app.use('/adopt', adopt);
 
 const port = process.env.PORT || 3000;

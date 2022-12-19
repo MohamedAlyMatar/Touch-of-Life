@@ -6,11 +6,6 @@ const animalSchema = new mongoose.Schema({
         required: true
 
     },
-    id: {
-        type: String,
-        required: true
-
-    },
     specie: {
         type: String,
         required: true,
@@ -34,7 +29,7 @@ animalSchema.pre("save" , async function(next)
 {
     for(key of animalKeys)
     { 
-        if(typeof( this[key]) === "string")
+        if(typeof( this[key]) === "string" && key !== "imgUrl")
             { 
                 this[key] = this[key].toLowerCase();
             }
