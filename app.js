@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-const serverless = require(' serverless-http')
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
@@ -77,8 +76,10 @@ app.get('/areqs', checkAuth, async (req, res) => {
 app.get('/farm', checkAuth, (req, res) => {
     res.render('farm')
 })
-
-
+app.get('/donate', (req, res) => {
+    res.render('donate')
+})
+//https://accept.paymob.com/api/acceptance/iframes/711647?payment_token={payment_key_obtained_previously}
 function checkAuth(req, res, next) {
 
     if (req.isAuthenticated()) {
@@ -113,5 +114,3 @@ app.use('/adopt', adopt);
 
 const port = process.env.PORT || 3000;
 app.listen(port, console.log("LISTENING ON PORT : ", port));
-
-app.exports.handler = serverless(app)
