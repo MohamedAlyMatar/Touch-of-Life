@@ -14,6 +14,10 @@
     <nav class="links" style="--items: 6;">
         <a href="/" class="active">Home</a>
         <a href="/areqs" >adoption requests</a>
+        <form action="/logout" method="post">
+            <button type="submit" name="your_name" value="your_value" class="btn-link">logout</button>
+        </form>
+    </form>
 
     </nav>
     <div class="forms-section">
@@ -21,29 +25,30 @@
 
             <div class="card">
                 <div class="form">
-                    <form action="https://www.instagram.com/codewith_random/" target="_blank">
+                    <form action="/admin" method="post">
+
+                        
                         <h2>Delete Form</h2>
-                        <input type="text" required placeholder="Image ID" id="imgid" autocomplete="off" />
-                        <!-- <input oninput="return formvalid()" type="password" required placeholder="Password" id="pass" autocomplete="off" />
-                <span id="vaild-pass"></span> -->
-                        <button type="submit">DELETE</button>
-                    </form>
+                        <input type="text" id="animalid" name="animalid" placeholder="animal id" />
+
+                
+                        <input type="submit" value="del" name="addordel"/>
+                      </form>
                 </div>
             </div>
 
             <div class="card">
                 <div class="form">
-                    <form>
+                    <form action="/admin" method="post">
+
+                        
                         <h2>Insert Form</h2>
-                        <input type="text" required placeholder="ID" id="id" autocomplete="off" />
-                        <input type="text" required placeholder="Name" id="name" autocomplete="off" />
-                        <input type="text" required placeholder="Specie" id="specie" autocomplete="off" />
-                        <input type="text" required placeholder="Breed" id="Breed" autocomplete="off" />
-                        <input type="url" required placeholder="Image URL" id="url" autocomplete="off" />
-                        <!-- <input oninput="return formvalid()" type="password" required placeholder="Password" id="pass" autocomplete="off" />
-                <span id="vaild-pass"></span> -->
-                        <button type="submit">ADD</button>
-                    </form>
+                        <input type="text" id="animalName" name="animalName" placeholder="animal name" />
+                        <input type="text" id="animalSpecie" name="animalSpecie" placeholder="animal Specie" />
+                        <input type="text" id="animalBreed" name="animalBreed" placeholder="animal Breed" />
+                        <input type="text" id="imgurl" name="imgurl" placeholder="imgurl" />
+                        <input type="submit" value="add" name="addordel"/>
+                      </form>
                 </div>
             </div>
         </div>

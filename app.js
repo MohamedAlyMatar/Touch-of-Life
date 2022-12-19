@@ -1,6 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
+
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
@@ -33,6 +34,14 @@ app.use(session({
     saveUninitialized: false
 }));
 
+var bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -54,11 +63,21 @@ app.get('/login', (req, res) => {
 
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/admin',
-    failureRedirect: '/',
+    failureRedirect: '/login',
 
 }))
 
 app.get('/admin', checkAuth, (req, res) => {
+    res.render('admin')
+})
+
+//admin post
+app.post('/admin', checkAuth, (req, res) => {
+    
+    console.log(req.body,"req query");
+    console.log(req.body.addordel,"add or delete type");
+
+    
     res.render('admin')
 })
 
@@ -72,9 +91,6 @@ app.get('/areqs', checkAuth, async (req, res) => {
         console.log(err)
         res.render('areqs', { rqs: [] })
     }
-})
-app.get('/farm', checkAuth, (req, res) => {
-    res.render('farm')
 })
 app.get('/donate', (req, res) => {
     res.render('donate')
@@ -97,17 +113,6 @@ app.post('/logout', function (req, res, next) {
     });
 });
 
-
-let freq = new request(
-    {
-
-        name : "omar ayman",
-        phone : "01099032198",
-        animal : "190123"
-
-    }
-);
-freq.save();
 
 const adopt = require('./routes/adopt');
 app.use('/adopt', adopt);
