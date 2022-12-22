@@ -17,10 +17,33 @@ body {
     flex-direction: column;
 }
 
+button {
+    outline: 0;
+    background: peru;
+    width: 100px;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover,
+button:active,
+button:focus {
+    background: black;
+    color: #fff;
+}
+
 
 /* top nav styles */
 
 .topnav {
+    z-index: 1;
     overflow: hidden;
     background-color: #FFEBAD;
     display: flex;
@@ -156,6 +179,8 @@ body {
 /* Section and Cards style */
 
 .card {
+    z-index: 0;
+    position: static;
     padding: 10px;
     background: transparent;
     height: auto;
@@ -166,7 +191,7 @@ body {
 }
 
 .form {
-    position: relative;
+    position: static;
     filter: drop-shadow(0 0 2px #000000);
     border-radius: 5px;
     width: 800px;
@@ -182,7 +207,7 @@ body {
 
 .form img {
     margin: 10px;
-    position: relative;
+    position: static;
     /* height: 20px;
     top: 230px;
     right: 60px; */
@@ -190,6 +215,7 @@ body {
 }
 
 .form input {
+    position: static;
     outline: 0;
     background: #f2f2f2;
     border-radius: 4px;
@@ -202,34 +228,6 @@ body {
 
 .form input:focus {
     box-shadow: 0 0 5px 0 rgba(106, 98, 210);
-}
-
-span {
-    color: red;
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.form button {
-    outline: 0;
-    background: peru;
-    width: 100%;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-}
-
-.form button:hover,
-.form button:active,
-.form button:focus {
-    background: black;
-    color: #fff;
 }
 
 .message {
@@ -253,9 +251,9 @@ span {
 /* slider container */
 
 .slider {
+    position: static;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.2);
-    position: relative;
     margin: 40px auto;
     max-width: 600px;
 }
@@ -264,8 +262,10 @@ span {
 /* Slideshow container */
 
 .slideshow-container {
+    display: flex;
+    flex-direction: row;
+    position: static;
     max-width: 1000px;
-    position: relative;
     margin: auto;
 }
 
@@ -281,27 +281,28 @@ span {
 
 .prev,
 .next {
+    position: static;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
+    /* top: 50%; */
     width: auto;
-    margin-top: -22px;
+    height: fit-content;
+    /* margin-top: -22px; */
     padding: 16px;
     color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    /* user-select: none; */
+    /* border-radius: 0 3px 3px 0; */
 }
 
 
 /* Position the "next button" to the right */
 
-.next {
+
+/* .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-}
+} */
 
 
 /* On hover, add a black background color with a little bit see-through */
@@ -320,25 +321,6 @@ span {
     padding: 8px 12px;
     position: absolute;
     top: 0;
-}
-
-
-/* The dots/bullets/indicators */
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
 }
 
 
@@ -365,6 +347,7 @@ span {
 /* service section start */
 
 .service-grid {
+    position: static;
     height: fit-content;
     width: auto;
 }
@@ -385,7 +368,8 @@ span {
 }
 
 .block {
-    height: fit-content;
+    position: static;
+    height: 300px;
     padding: 10px;
     width: 400px;
     background-color: burlywood;
@@ -436,13 +420,14 @@ span {
 }
 
 .service-wrap {
+    position: static;
+    height: 280px;
     border: 1px solid #e6e6e6;
     padding: 50px 30px;
-    position: relative;
 }
 
 .service-wrap p {
-    position: relative;
+    position: static;
 }
 
 #donate:hover {
@@ -459,11 +444,12 @@ span {
     background-position: center center;
     background-attachment: local;
     transition: all .5s;
+    position: static;
 }
 
 .service-wrap:hover:before {
     background: rgba(0, 0, 0, 0.2901960784313726);
-    position: absolute;
+    position: static;
     height: 100%;
     width: 100%;
     left: 0px;

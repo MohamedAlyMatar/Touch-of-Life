@@ -7,6 +7,7 @@
     <title>Home</title>
 
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/general.css">
     <script type="text/javascript" src="../js/index.js"></script>
 </head>
 
@@ -18,12 +19,12 @@
         </div>
 
         <nav class="links" style="--items: 6;">
-            <a href="../pages/index.html" class="active">Home</a>
+            <a href="../views/index.html" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#service">Service</a>
             <a href="#donate">Donate</a>
             <a href="#contact">Contacts</a>
-            <a href="../pages/login.html">Admin?</a>
+            <a href="../views/login.html">Admin?</a>
             <span class="line"></span>
         </nav>
     </div>
@@ -57,6 +58,7 @@
     <section class="service-grid">
         <div class="container">
             <div class="row">
+
                 <div class="block">
                     <div class="service-wrap" id="donate">
                         <div class="service-icon">
@@ -64,17 +66,20 @@
                         </div>
                         <h3>Donate</h3>
                         <p>Know what the animals need and aid them by donating!</p>
-                        <a href="#">Donate</a>
+                        <button type="submit">Donate <br>50</button>
+                        <button type="submit">Donate 100</button>
+                        <button type="submit">Donate 200</button>
                     </div>
                 </div>
+
                 <div class="block">
                     <div class="service-wrap" id="adopt">
                         <div class="service-icon">
                             <i class="far fa-chart-bar"></i>
                         </div>
-                        <h3>Adapt</h3>
+                        <h3>Adopt</h3>
                         <p>If you are an animal lover and loved one of our animals and beleive you can take care of it</p>
-                        <a href="#">Adopt Now!</a>
+                        <button type="submit">Adopt!</button>
                     </div>
                 </div>
             </div>
@@ -84,24 +89,13 @@
     <!--* slider cntr -->
     <div class="slider">
         <div class="slideshow-container">
-
+            <a class="prev" onclick="prevClick()">&#10094;</a>
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <div id="slidenum" class="numbertext"></div>
+                <!-- <div id="slidenum" class="numbertext"></div> -->
                 <img id="slidepic" src="../imgs/pics/cover.jpg" alt="pic" style="width:100%">
             </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="prevClick()">&#10094;</a>
             <a class="next" onclick="nextClick()">&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </div>
     <!-- slider end -->
