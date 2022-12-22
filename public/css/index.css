@@ -9,7 +9,11 @@ html {
 }
 
 body {
+<<<<<<< HEAD:css/index.css
     background-color: peru;
+=======
+    background-color: #ffffff;
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
     margin: 0;
     font-family: monospace;
     min-height: 100vh;
@@ -40,15 +44,17 @@ button:focus {
 }
 
 
-/* top nav styles */
+/********************** top nav styles *******************/
 
 .topnav {
     z-index: 1;
     overflow: hidden;
-    background-color: #FFEBAD;
-    display: flex;
+    background-color: #fffeab;
+    display: block;
     flex-direction: row;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     top: 0px;
 }
 
@@ -56,12 +62,15 @@ button:focus {
 /* logo pic */
 
 .text_logo {
-    margin-left: 10px;
+    display: block;
+    text-align: center;
+    padding: 0;
 }
 
-.logo a {
-    color: blue;
-    text-decoration: none;
+.text_logo> h2 {
+    color: #383838;
+    font-size: 17px;
+    padding: 0;
 }
 
 
@@ -71,35 +80,32 @@ button:focus {
 /* Appearance */
 
 .links {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom, #FFF6BF, transparent);
-    border-bottom: 1px solid #FFF6BF;
-    box-shadow: 0 0 32px #FFF6BF;
+    background-color: #383838;
     font-size: 2em;
     align-self: center;
 }
 
 .links>a {
-    color: grey;
+    color: #ffffff;
     padding: .75em;
-    font-size: 20px;
+    font-size: 13px;
     text-align: center;
     text-decoration: none;
     transition: all .5s;
 }
 
 .links>a:hover {
-    background: #ffffff06;
-    color: #adf;
+    background: #cacaca06;
+    color: #ffffff;
 }
 
 .links>a.active {
-    background-color: #FFEBAD;
-    color: black;
+    background-color: #2b2b2b;
+    color: #ffffff;
 }
 
 .links>.line {
-    background: #68a;
+    background: #ffffff;
     height: 1px;
     pointer-events: none;
 }
@@ -175,12 +181,20 @@ button:focus {
 
 /* End of links style */
 
+/*****************************************************************************/
 
 /* Section and Cards style */
+<<<<<<< HEAD:css/index.css
 
 .card {
     z-index: 0;
     position: static;
+=======
+#about {
+    margin-top: 100px;
+}
+.card {
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
     padding: 10px;
     background: transparent;
     height: auto;
@@ -191,7 +205,11 @@ button:focus {
 }
 
 .form {
+<<<<<<< HEAD:css/index.css
     position: static;
+=======
+    position: relative;
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
     filter: drop-shadow(0 0 2px #000000);
     border-radius: 5px;
     width: 800px;
@@ -207,7 +225,11 @@ button:focus {
 
 .form img {
     margin: 10px;
+<<<<<<< HEAD:css/index.css
     position: static;
+=======
+    position: relative;
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
     /* height: 20px;
     top: 230px;
     right: 60px; */
@@ -215,7 +237,10 @@ button:focus {
 }
 
 .form input {
+<<<<<<< HEAD:css/index.css
     position: static;
+=======
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
     outline: 0;
     background: #f2f2f2;
     border-radius: 4px;
@@ -230,6 +255,37 @@ button:focus {
     box-shadow: 0 0 5px 0 rgba(106, 98, 210);
 }
 
+<<<<<<< HEAD:css/index.css
+=======
+span {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.form button {
+    outline: 0;
+    background: peru;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: black;
+    color: #fff;
+}
+
+>>>>>>> 6475acbcf365017df02916f0d0b36185f8659d63:public/css/index.css
 .message {
     margin: 15px 0;
     text-align: center;
