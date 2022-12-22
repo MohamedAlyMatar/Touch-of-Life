@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-color: peru;
+    background-color: #ffffff;
     margin: 0;
     font-family: monospace;
     min-height: 100vh;
@@ -18,14 +18,16 @@ body {
 }
 
 
-/* top nav styles */
+/********************** top nav styles *******************/
 
 .topnav {
     overflow: hidden;
-    background-color: #FFEBAD;
-    display: flex;
+    background-color: #fffeab;
+    display: block;
     flex-direction: row;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     top: 0px;
 }
 
@@ -33,12 +35,15 @@ body {
 /* logo pic */
 
 .text_logo {
-    margin-left: 10px;
+    display: block;
+    text-align: center;
+    padding: 0;
 }
 
-.logo a {
-    color: blue;
-    text-decoration: none;
+.text_logo> h2 {
+    color: #383838;
+    font-size: 17px;
+    padding: 0;
 }
 
 
@@ -48,35 +53,32 @@ body {
 /* Appearance */
 
 .links {
-    background-color: transparent;
-    background-image: linear-gradient(to bottom, #FFF6BF, transparent);
-    border-bottom: 1px solid #FFF6BF;
-    box-shadow: 0 0 32px #FFF6BF;
+    background-color: #383838;
     font-size: 2em;
     align-self: center;
 }
 
 .links>a {
-    color: grey;
+    color: #ffffff;
     padding: .75em;
-    font-size: 20px;
+    font-size: 13px;
     text-align: center;
     text-decoration: none;
     transition: all .5s;
 }
 
 .links>a:hover {
-    background: #ffffff06;
-    color: #adf;
+    background: #cacaca06;
+    color: #ffffff;
 }
 
 .links>a.active {
-    background-color: #FFEBAD;
-    color: black;
+    background-color: #2b2b2b;
+    color: #ffffff;
 }
 
 .links>.line {
-    background: #68a;
+    background: #ffffff;
     height: 1px;
     pointer-events: none;
 }
@@ -152,9 +154,12 @@ body {
 
 /* End of links style */
 
+/*****************************************************************************/
 
 /* Section and Cards style */
-
+#about {
+    margin-top: 100px;
+}
 .card {
     padding: 10px;
     background: transparent;
