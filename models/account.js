@@ -10,7 +10,6 @@ const accountSchema = new mongoose.Schema({
     },
     password: {
         type : String,
-        minlength:5
     }
     
 

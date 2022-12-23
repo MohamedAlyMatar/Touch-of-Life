@@ -82,13 +82,24 @@ app.post('/admin', checkAuth, async (req, res) => {
             breed:req.body.animalBreed,
             imgUrl: req.body.imgurl,
         })
+        try{
         result = await newAnimal.save();
+    }
+    catch(err){
+        console.log(err)
+    }
     }
     else
     {
         let ID = req.body.animalid;
         console.log(ID,"sent ID");
+        try{
         result = await Animal.deleteOne({_id:ID});
+    }
+    catch(err)
+    {
+        console.log(err)
+    }
     }
     console.log (result);
 

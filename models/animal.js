@@ -3,12 +3,10 @@ const animalSchema = new mongoose.Schema({
 
     name: {
         type: String,
-        required: true
 
     },
     specie: {
         type: String,
-        required: true,
         //EX: dog, donkey , cat ,...
 
     },
