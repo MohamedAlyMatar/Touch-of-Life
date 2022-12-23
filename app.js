@@ -160,23 +160,6 @@ app.get('/payment500', (req, res) => {
     res.sendFile(__dirname+'/payment500.html')
 })
 
-/*
-name: {
-
-        type: String,
-
-
-    },
-    phone: {
-        type : String,
-        minlength:5,
-    },
-    animalid : {
-
-        type: String,
-
-    }
- */
 app.post("/adoptrequest",async (req,res) => {
 console.log(req.body , "adopt request body")
     
@@ -192,7 +175,7 @@ let newreq =  new request({
     res.render("adopt")
 }
 catch(err){
-    res.render("/errorreq")
+    res.send("error")
 }
 })
 
