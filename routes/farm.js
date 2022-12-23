@@ -8,7 +8,18 @@ let Animal = require('../models/animal');
 
 router.get('/', async (req, res) => {
 
-res.render('adopt')
+    my_animals = []
+    try {
+        my_animals = await Animal.find();
+
+        console.log(my_animals, "my_animals")
+
+    }
+    catch (error) {
+        console.log("error", error)
+
+    }
+    res.render('farm', { cats: my_animals });
 
 });
 

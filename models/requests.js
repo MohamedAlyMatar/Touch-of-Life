@@ -10,9 +10,8 @@ const requestSchema = new mongoose.Schema({
     },
     phone: {
         type : String,
-        minlength:5,
     },
-    animal : {
+    animalid : {
 
         type: String,
 

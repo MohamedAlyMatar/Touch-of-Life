@@ -16,9 +16,8 @@ async function connect() {
         console.error(err);
     }
 }
+
 connect();
-
-
 require('./passport-config.js')(passport)
 
 app.set('view engine', 'ejs');
@@ -47,7 +46,6 @@ app.use(passport.session());
 
 
 let request = require('./models/requests');
-
 
 
 app.get('/', (req, res) => {
@@ -99,8 +97,10 @@ app.post('/admin', checkAuth, async (req, res) => {
 })
 
 app.get('/areqs', checkAuth, async (req, res) => {
+    
     try {
         let result = await request.find();
+        console.log(result , "result of requests");
         res.render('areqs', { rqs: result });
 
     }
@@ -109,7 +109,24 @@ app.get('/areqs', checkAuth, async (req, res) => {
         res.render('areqs', { rqs: [] })
     }
 })
-//https://accept.paymob.com/api/acceptance/iframes/711647?payment_token={payment_key_obtained_previously}
+
+
+app.post('/delete',checkAuth ,async (req, res) => {
+    console.log(req.body)
+    let deleteResult =await request.findByIdAndDelete(req.body.reqid)
+    console.log(deleteResult)
+    try {
+        let result = await request.find();
+        res.render('areqs', { rqs: result });
+        }
+    catch (err) {
+        console.log(err)
+        res.render('areqs', { rqs: [] })
+        }
+    })
+
+
+
 function checkAuth(req, res, next) {
 
     if (req.isAuthenticated()) {
@@ -130,15 +147,62 @@ app.post('/logout', function (req, res, next) {
 
 
 
-app.get('/donate', (req, res) => {
+app.get('/payment', (req, res) => {
     //res.send(__dirname+'/payment.html')
     res.sendFile(__dirname+'/payment.html')
 })
+app.get('/payment200', (req, res) => {
+    //res.send(__dirname+'/payment.html')
+    res.sendFile(__dirname+'/payment200.html')
+})
+app.get('/payment500', (req, res) => {
+    //res.send(__dirname+'/payment.html')
+    res.sendFile(__dirname+'/payment500.html')
+})
+
+/*
+name: {
+
+        type: String,
+
+
+    },
+    phone: {
+        type : String,
+        minlength:5,
+    },
+    animalid : {
+
+        type: String,
+
+    }
+ */
+app.post("/adoptrequest",async (req,res) => {
+console.log(req.body , "adopt request body")
+    
+try{
+let newreq =  new request({
+        name : req.body.name,
+        phone : req.body.phone_number,
+        animalid : req.body.animalid
+
+    });
+    let result = await newreq.save()
+    console.log(result)
+    res.render("adopt")
+}
+catch(err){
+    res.render("/errorreq")
+}
+})
+
+
 
 
 const adopt = require('./routes/adopt');
+const farm = require('./routes/farm');
 const Animal = require('./models/animal.js');
 app.use('/adopt', adopt);
-
+app.use('/farm', farm);
 const port = process.env.PORT || 3000;
 app.listen(port, console.log("LISTENING ON PORT : ", port));

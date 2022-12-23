@@ -8,12 +8,50 @@
     <link rel="stylesheet" type="text/css" href="../css/adopt.css">
     <script type="text/javascript" src="../js/adopt.js"></script>
 </head>
-
+<style>
+    button {
+    outline: 0;
+    background: peru;
+    width: 100px;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    position : relative;
+}
+input
+{
+    outline: 0;
+    background: rgb(237, 176, 114);
+    width: 100px;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    position : relative;
+}
+button:hover,
+button:active,
+button:focus {
+    background: black;
+    color: #fff;
+}
+</style>
 <body>
 
     <nav class="links" style="--items: 6;">
-        <a href="/" class="active">Home</a>
-        <a href="/admin">admin page</a>
+        <button onclick="location.href='/'" type="button"> Home</button>
+        <button onclick="location.href='/admin'" type="button"> Admin page</button>
 
 
     </nav>
@@ -34,7 +72,13 @@
                         <p id="name"><%=r.animal %> </p>
                     </h3>
                 </form>
+                
             </div>
+            <form action="/delete" method="post">
+                <input type="submit" value="delete" />
+                <input type="hidden" name="reqid" value=<%=r._id %>>
+            </form>
+
         </div>
         <% } %>
     
