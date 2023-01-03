@@ -1,3 +1,4 @@
+ammount = 500;
 const apiKey = "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8yTlRNM01UZ3NJbU5zWVhOeklqb2lUV1Z5WTJoaGJuUWlMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuNjRLZXRvTE0wU3MyQTZVUVdFWm94eTRtcm5vZlUxQ1VMc1d3ZERsYUdnQmFCdGhEaTE2a3ljdU9Pb0FQU3FUU0tXejVvbXlQSkp6R2xVX3VXcE1yUXc="
 
 async function firstStep() {
@@ -25,7 +26,7 @@ async function secondStep(token) {
     let data = {
         "auth_token": token,
         "delivery_needed": "false",
-        "amount_cents": 5000,
+        "amount_cents": `${ammount*100}`,
         "currency": "EGP",
         "items": [],
 
@@ -47,7 +48,7 @@ async function secondStep(token) {
 async function thirdStep(token, id) {
     let data = {
         "auth_token": token,
-        "amount_cents": 5000,
+        "amount_cents": `${ammount*100}`,
         "expiration": 3600,
         "order_id": id,
         "billing_data": {

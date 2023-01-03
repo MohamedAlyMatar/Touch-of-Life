@@ -30,6 +30,10 @@ button {
     -webkit-transition: all 0.3 ease;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+    position : relative;
+>>>>>>> a5b1975ea62b26326ced0052e9e0c545f31dc2be
 }
 
 button:hover,

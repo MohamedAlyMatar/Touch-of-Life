@@ -41,26 +41,30 @@ button:focus {
             Admin page</button>
 
     </nav>
+    <% for (var cat of cats) { %>
     <div class="card">
         <div class="form">
-            <form action="/farm" target=”_blank”>
+            <form>
                 <div>
-                    <img class="card_photo" src="../imgs/pics/playground.jpg" alt="my portrait">
+                    <img src= <%=cat.imgUrl %> >
                 </div>
-                <p>
-            
-                    Click here to see all available animals
-
-                </p>
-                <button type="submit">search Our Farm :) 🌍💛</button>
+                <h3>ID:
+                    <p id="id"><%=cat._id %></p>
+                </h3>
+                <h3>Name:
+                    <p id="name"><%=cat.name %></p>
+                </h3>
+                <h3>Breed:
+                    <p id="name"><%=cat.breed %>  <%=cat.specie %> </p>
+                </h3>
             </form>
         </div>
     </div>
-   
+    <% } %>
 
     <div class="card">
-        <div class="form" >
-            <!-- <form action="/adoptrequest"  method="POST">
+        <div class="form" action="/adoptRequest">
+            <form>
                 <p>
                     if you would like to adopt me  🐕 🐕
                 </p>
@@ -69,23 +73,7 @@ button:focus {
                 <input type="text" required placeholder="Your Name" id="your_name" autocomplete="off" />
                 <input type="text" required placeholder="your Phone Number" id="phone_number" autocomplete="off" />
                 <button type="submit">Adopt</button>
-            </form> -->
-
-
-            <form action="/adoptrequest" method="post">
-
-                        
-                <p>
-                    if you would like to adopt me  🐕 🐕
-                </p>
-                <p>Enter the following information</p>
-
-                <input type="text" id="animalid" name="animalid" placeholder="animal id" />
-                <input type="text" id="name" name="name" placeholder="your name" />
-                <input type="text" id="phone_number" name="phone_number" placeholder="phone number" />
-        
-                <button type="submit">Adopt</button>
-              </form>
+            </form>
         </div>
     </div>
 

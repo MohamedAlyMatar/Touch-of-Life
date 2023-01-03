@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="">
+<style>
+    button {
+    outline: 0;
+    background: peru;
+    width: 100px;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    position : relative;
+}
 
+button:hover,
+button:active,
+button:focus {
+    background: black;
+    color: #fff;
+}
+</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin</title>
 
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/genral.css">
     <script type="text/javascript" src="../js/admin.js"></script>
 </head>
 
 <body>
     <nav class="links" style="--items: 6;">
-        <a href="/" class="active">Home</a>
-        <a href="/areqs" >adoption requests</a>
-        <a href="/adopt" >animals</a>
-        <form action="/logout" method="post">
-            <button type="submit" name="your_name" value="your_value" class="btn-link">logout</button>
-        </form>
+        <button onclick="location.href='/'" type="button"> Home</button>
+        <button onclick="location.href='/areqs'" type="button">
+            Requests</button>
+        <button onclick="location.href='/farm'" type="button">
+            Animals</button>
+            <button onclick="location.href='/logout'" type="button">
+                Logout</button>
+
     </form>
 
     </nav>

@@ -25,7 +25,7 @@ async function secondStep(token) {
     let data = {
         "auth_token": token,
         "delivery_needed": "false",
-        "amount_cents": "100",
+        "amount_cents": 5000,
         "currency": "EGP",
         "items": [],
 
@@ -47,7 +47,7 @@ async function secondStep(token) {
 async function thirdStep(token, id) {
     let data = {
         "auth_token": token,
-        "amount_cents": "100",
+        "amount_cents": 5000,
         "expiration": 3600,
         "order_id": id,
         "billing_data": {
