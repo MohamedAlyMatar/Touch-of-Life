@@ -41,8 +41,10 @@ button:focus {
             Requests</button>
         <button onclick="location.href='/farm'" type="button">
             Animals</button>
-            <button onclick="location.href='/logout'" type="button">
-                Logout</button>
+            <form action="/logout" method="post">
+                <button name="logout" value="logout">logout</button>
+            </form>
+            
 
     </form>
 
