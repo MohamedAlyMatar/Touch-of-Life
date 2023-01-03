@@ -5,48 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adopt</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/adopt.css">
-    <script type="text/javascript" src="../js/adopt.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/adopt.css">
+    <script type="text/javascript" src="../public/js/adopt.js"></script>
 </head>
 <style>
     button {
-    outline: 0;
-    background: peru;
-    width: 100px;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    position : relative;
-}
-input
-{
-    outline: 0;
-    background: rgb(237, 176, 114);
-    width: 100px;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    position : relative;
-}
-button:hover,
-button:active,
-button:focus {
-    background: black;
-    color: #fff;
-}
+        outline: 0;
+        background: peru;
+        width: 100px;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    input {
+        outline: 0;
+        background: rgb(237, 176, 114);
+        width: 100px;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    button:hover,
+    button:active,
+    button:focus {
+        background: black;
+        color: #fff;
+    }
 </style>
+
 <body>
 
     <nav class="links" style="--items: 6;">
@@ -61,18 +63,24 @@ button:focus {
         <div class="card">
             <div class="form">
                 <form>
-                    
+
                     <h3>Name:
-                        <p id="id"><%=r.name %></p>
+                        <p id="id">
+                            <%=r.name %>
+                        </p>
                     </h3>
                     <h3>phone number:
-                        <p id="name"><%=r.phone %></p>
+                        <p id="name">
+                            <%=r.phone %>
+                        </p>
                     </h3>
                     <h3>animal ID:
-                        <p id="name"><%=r.animal %> </p>
+                        <p id="name">
+                            <%=r.animal %>
+                        </p>
                     </h3>
                 </form>
-                
+
             </div>
             <form action="/delete" method="post">
                 <input type="submit" value="delete" />
@@ -81,18 +89,18 @@ button:focus {
 
         </div>
         <% } %>
-    
 
-    <footer>
-        <p id="contact">Contact us here!</p>
-        <div class="contacts_bar">
-            <a href="https://web.facebook.com/TOLAnimalSanctuary/about"> <img class="clogo" src="../imgs/icons/fb.png" alt="Facebook"> </a>
-            <a href=""> <img class="clogo" src="../imgs/icons/email.png" alt="Email"> </a>
-            <a href=""> <img class="clogo" src="../imgs/icons/phone.png" alt="Telephone"> </a>
-        </div>
-        <p>TOUCH OF LIFE Organization Reg.nr 2897 - 03/5/07 Ministry of Social Affairs Giza- EGYPT
-        </p>
-    </footer>
+
+            <footer>
+                <p id="contact">Contact us here!</p>
+                <div class="contacts_bar">
+                    <a href="https://web.facebook.com/TOLAnimalSanctuary/about"> <img class="clogo" src="../imgs/icons/fb.png" alt="Facebook"> </a>
+                    <a href=""> <img class="clogo" src="../imgs/icons/email.png" alt="Email"> </a>
+                    <a href=""> <img class="clogo" src="../imgs/icons/phone.png" alt="Telephone"> </a>
+                </div>
+                <p>TOUCH OF LIFE Organization Reg.nr 2897 - 03/5/07 Ministry of Social Affairs Giza- EGYPT
+                </p>
+            </footer>
 
 </body>
 

@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adopt</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/adopt.css">
-    <script type="text/javascript" src="../js/adopt.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/adopt.css">
+    <script type="text/javascript" src="../public/js/adopt.js"></script>
 </head>
 <style>
     button {
-    outline: 0;
-    background: peru;
-    width: 100px;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    position : relative;
-}
-
-button:hover,
-button:active,
-button:focus {
-    background: black;
-    color: #fff;
-}
+        outline: 0;
+        background: peru;
+        width: 100px;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    button:hover,
+    button:active,
+    button:focus {
+        background: black;
+        color: #fff;
+    }
 </style>
+
 <body>
 
     <nav class="links" style="--items: 6;">
@@ -48,7 +49,7 @@ button:focus {
                     <img class="card_photo" src="../imgs/pics/playground.jpg" alt="my portrait">
                 </div>
                 <p>
-            
+
                     Click here to see all available animals
 
                 </p>
@@ -56,10 +57,10 @@ button:focus {
             </form>
         </div>
     </div>
-   
+
 
     <div class="card">
-        <div class="form" >
+        <div class="form">
             <!-- <form action="/adoptrequest"  method="POST">
                 <p>
                     if you would like to adopt me  🐕 🐕
@@ -74,18 +75,18 @@ button:focus {
 
             <form action="/adoptrequest" method="post">
 
-                        
+
                 <p>
-                    if you would like to adopt me  🐕 🐕
+                    if you would like to adopt me 🐕 🐕
                 </p>
                 <p>Enter the following information</p>
 
                 <input type="text" id="animalid" name="animalid" placeholder="animal id" />
                 <input type="text" id="name" name="name" placeholder="your name" />
                 <input type="text" id="phone_number" name="phone_number" placeholder="phone number" />
-        
+
                 <button type="submit">Adopt</button>
-              </form>
+            </form>
         </div>
     </div>
 

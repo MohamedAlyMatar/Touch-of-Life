@@ -5,33 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adopt</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/adopt.css">
-    <script type="text/javascript" src="../js/adopt.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/adopt.css">
+    <script type="text/javascript" src="../public/js/adopt.js"></script>
 </head>
 <style>
     button {
-    outline: 0;
-    background: peru;
-    width: 100px;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    position : relative;
-}
-
-button:hover,
-button:active,
-button:focus {
-    background: black;
-    color: #fff;
-}
+        outline: 0;
+        background: peru;
+        width: 100px;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    button:hover,
+    button:active,
+    button:focus {
+        background: black;
+        color: #fff;
+    }
 </style>
+
 <body>
 
     <nav class="links" style="--items: 6;">
@@ -42,51 +43,58 @@ button:focus {
 
     </nav>
     <% for (var cat of cats) { %>
-    <div class="card">
-        <div class="form">
-            <form>
-                <div>
-                    <img src= <%=cat.imgUrl %> >
+        <div class="card">
+            <div class="form">
+                <form>
+                    <div>
+                        <img src=< %=cat.imgUrl %> >
+                    </div>
+                    <h3>ID:
+                        <p id="id">
+                            <%=cat._id %>
+                        </p>
+                    </h3>
+                    <h3>Name:
+                        <p id="name">
+                            <%=cat.name %>
+                        </p>
+                    </h3>
+                    <h3>Breed:
+                        <p id="name">
+                            <%=cat.breed %>
+                                <%=cat.specie %>
+                        </p>
+                    </h3>
+                </form>
+            </div>
+        </div>
+        <% } %>
+
+            <div class="card">
+                <div class="form" action="/adoptRequest">
+                    <form>
+                        <p>
+                            if you would like to adopt me 🐕 🐕
+                        </p>
+                        <p>Enter the following information</p>
+                        <input type="text" required placeholder="my Animal ID" id="id" autocomplete="off" />
+                        <input type="text" required placeholder="Your Name" id="your_name" autocomplete="off" />
+                        <input type="text" required placeholder="your Phone Number" id="phone_number" autocomplete="off" />
+                        <button type="submit">Adopt</button>
+                    </form>
                 </div>
-                <h3>ID:
-                    <p id="id"><%=cat._id %></p>
-                </h3>
-                <h3>Name:
-                    <p id="name"><%=cat.name %></p>
-                </h3>
-                <h3>Breed:
-                    <p id="name"><%=cat.breed %>  <%=cat.specie %> </p>
-                </h3>
-            </form>
-        </div>
-    </div>
-    <% } %>
+            </div>
 
-    <div class="card">
-        <div class="form" action="/adoptRequest">
-            <form>
-                <p>
-                    if you would like to adopt me  🐕 🐕
+            <footer>
+                <p id="contact">Contact us here!</p>
+                <div class="contacts_bar">
+                    <a href="https://web.facebook.com/TOLAnimalSanctuary/about"> <img class="clogo" src="../imgs/icons/fb.png" alt="Facebook"> </a>
+                    <a href=""> <img class="clogo" src="../imgs/icons/email.png" alt="Email"> </a>
+                    <a href=""> <img class="clogo" src="../imgs/icons/phone.png" alt="Telephone"> </a>
+                </div>
+                <p>TOUCH OF LIFE Organization Reg.nr 2897 - 03/5/07 Ministry of Social Affairs Giza- EGYPT
                 </p>
-                <p>Enter the following information</p>
-                <input type="text" required placeholder="my Animal ID" id="id" autocomplete="off" />
-                <input type="text" required placeholder="Your Name" id="your_name" autocomplete="off" />
-                <input type="text" required placeholder="your Phone Number" id="phone_number" autocomplete="off" />
-                <button type="submit">Adopt</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <p id="contact">Contact us here!</p>
-        <div class="contacts_bar">
-            <a href="https://web.facebook.com/TOLAnimalSanctuary/about"> <img class="clogo" src="../imgs/icons/fb.png" alt="Facebook"> </a>
-            <a href=""> <img class="clogo" src="../imgs/icons/email.png" alt="Email"> </a>
-            <a href=""> <img class="clogo" src="../imgs/icons/phone.png" alt="Telephone"> </a>
-        </div>
-        <p>TOUCH OF LIFE Organization Reg.nr 2897 - 03/5/07 Ministry of Social Affairs Giza- EGYPT
-        </p>
-    </footer>
+            </footer>
 
 </body>
 

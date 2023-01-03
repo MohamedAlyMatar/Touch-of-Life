@@ -2,36 +2,37 @@
 <html lang="">
 <style>
     button {
-    outline: 0;
-    background: peru;
-    width: 100px;
-    border: 0;
-    margin-top: 10px;
-    border-radius: 3px;
-    padding: 15px;
-    color: #ffffff;
-    font-size: 15px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    position : relative;
-}
-
-button:hover,
-button:active,
-button:focus {
-    background: black;
-    color: #fff;
-}
+        outline: 0;
+        background: peru;
+        width: 100px;
+        border: 0;
+        margin-top: 10px;
+        border-radius: 3px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 15px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    button:hover,
+    button:active,
+    button:focus {
+        background: black;
+        color: #fff;
+    }
 </style>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/admin.css">
-    <link rel="stylesheet" type="text/css" href="../css/genral.css">
-    <script type="text/javascript" src="../js/admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/genral.css">
+    <script type="text/javascript" src="../public/js/admin.js"></script>
 </head>
 
 <body>
@@ -41,12 +42,12 @@ button:focus {
             Requests</button>
         <button onclick="location.href='/farm'" type="button">
             Animals</button>
-            <form action="/logout" method="post">
-                <button name="logout" value="logout">logout</button>
-            </form>
-            
+        <form action="/logout" method="post">
+            <button name="logout" value="logout">logout</button>
+        </form>
 
-    </form>
+
+        </form>
 
     </nav>
     <div class="forms-section">
@@ -56,13 +57,13 @@ button:focus {
                 <div class="form">
                     <form action="/admin" method="post">
 
-                        
+
                         <h2>Delete Form</h2>
                         <input type="text" id="animalid" name="animalid" placeholder="animal id" />
 
-                
-                        <input type="submit" value="del" name="addordel"/>
-                      </form>
+
+                        <input type="submit" value="del" name="addordel" />
+                    </form>
                 </div>
             </div>
 
@@ -70,14 +71,14 @@ button:focus {
                 <div class="form">
                     <form action="/admin" method="post">
 
-                        
+
                         <h2>Insert Form</h2>
                         <input type="text" id="animalName" name="animalName" placeholder="animal name" />
                         <input type="text" id="animalSpecie" name="animalSpecie" placeholder="animal Specie" />
                         <input type="text" id="animalBreed" name="animalBreed" placeholder="animal Breed" />
                         <input type="text" id="imgurl" name="imgurl" placeholder="imgurl" />
-                        <input type="submit" value="add" name="addordel"/>
-                      </form>
+                        <input type="submit" value="add" name="addordel" />
+                    </form>
                 </div>
             </div>
         </div>
