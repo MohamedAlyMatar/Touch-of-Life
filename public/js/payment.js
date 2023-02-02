@@ -18,9 +18,6 @@ async function firstStep() {
     secondStep(token)
 }
 
-
-
-
 async function secondStep(token) {
     let data = {
         "auth_token": token,
@@ -86,7 +83,7 @@ async function thirdStep(token, id) {
 }
 
 async function cardPayment(token) {
-    console.log("token CP",token)
+    console.log("token CP", token)
     let iframeURL = `https://accept.paymob.com/api/acceptance/iframes/711647?payment_token=${token}`;
     location.href = iframeURL;
 
