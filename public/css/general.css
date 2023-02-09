@@ -11,8 +11,8 @@ html {
 body {
     background-color: #cd853f;
     opacity: 1;
-    background: radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#ffffff 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #ffffff 2px, #cd853f 2px) -1px 0;
-    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+    background: radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent) 37.5px 37.5px, linear-gradient(#ffffff 3px, transparent 3px) 0 -1.5px, linear-gradient(90deg, #ffffff 3px, #cd853f 3px) -1.5px 0;
+    background-size: 75px 75px, 75px 75px, 37.5px 37.5px, 37.5px 37.5px;
     margin: 0;
     font-family: monospace;
     min-height: 100vh;
