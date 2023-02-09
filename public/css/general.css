@@ -9,7 +9,10 @@ html {
 }
 
 body {
-    background-color: peru;
+    background-color: #cd853f;
+    opacity: 1;
+    background: radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #cd853f 20%, #cd853f 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#ffffff 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #ffffff 2px, #cd853f 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
     margin: 0;
     font-family: monospace;
     min-height: 100vh;
@@ -41,6 +44,7 @@ nav {
 
 .text_logo {
     margin-left: 10px;
+    align-self: center;
 }
 
 .logo a {
